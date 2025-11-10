@@ -1,0 +1,365 @@
+:root {
+  --bg: #0f1724;
+  --muted: #9aa4b2;
+  --accent: #e53935;
+  --accent-2: #ff7a7a;
+  --max: 1100px;
+  font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #071426 0%, #0f1724 60%);
+  color: #e6eef8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+.container {
+  max-width: var(--max);
+  margin: 32px auto;
+  padding: 20px
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent);
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.logo .mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+  box-shadow: 0 6px 18px rgba(229, 57, 53, 0.18)
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #cfe8ff;
+  position: relative;
+  transition: all .28s ease
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: transparent;
+  bottom: 6px;
+  border-radius: 2px;
+  transition: all .25s ease
+}
+
+.nav-links a:hover {
+  transform: translateY(-3px)
+}
+
+.nav-links a.active::after {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0.95
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+  margin-top: 26px
+}
+/* Style the select box itself */
+select {
+    background-color: #1a1a2e; /* Dark background */
+    color: #ffffff; /* Text color */
+    border: 1px solid #ff4d6d; /* Optional border color */
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Style the options inside the dropdown */
+select option {
+    background-color: #1a1a2e; /* Dark background for options */
+    color: #ffffff; /* White text for options */
+}
+
+@media(max-width:980px) {
+  .hero {
+    grid-template-columns: 1fr
+  }
+}
+
+.hero .copy h1 {
+  font-size: 36px;
+  line-height: 1.02;
+  margin: 0 0 12px 0;
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4)
+}
+
+.hero .copy p {
+  color: var(--muted);
+  margin: 0 0 18px 0;
+  font-size: 15px
+}
+
+.cta {
+  display: flex;
+  gap: 12px
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: #e6eef8;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .22s ease
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 30px rgba(229, 57, 53, 0.18)
+}
+
+.btn-secondary {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15)
+}
+
+/* Card */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(6px)
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px
+}
+
+@media(max-width:900px) {
+  .features {
+    grid-template-columns: 1fr
+  }
+}
+
+.feature {
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+  transition: transform .3s ease, box-shadow .3s ease
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.6)
+}
+
+/* About stats */
+.stats {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 18px
+}
+
+.stat {
+  flex: 1;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center
+}
+
+.stat h3 {
+  font-size: 28px;
+  margin: 6px 0;
+  color: #fff
+}
+
+/* Forms */
+form {
+  display: grid;
+  gap: 10px
+}
+
+label {
+  display: block;
+  color: var(--muted);
+  font-size: 14px
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: #e6eef8
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.08);
+  border-color: rgba(229, 57, 53, 0.3)
+}
+
+/* Donor list */
+.donor-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.donor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.donor-info {
+  flex: 1;
+}
+
+.donor-name {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.donor-details {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.blood-badge {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white
+}
+
+/* Footer */
+.footer {
+  margin-top: 36px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 18px
+}
+
+/* Animations */
+.fadeUp {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease
+}
+
+.fadeUp.show {
+  opacity: 1;
+  transform: none
+}
+
+.float {
+  animation: float 6s ease-in-out infinite
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-8px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted)
+}
+
+@media(max-width:520px) {
+  .nav-links {
+    display: none
+  }
+
+  .hero .copy h1 {
+    font-size: 26px
+  }
+}

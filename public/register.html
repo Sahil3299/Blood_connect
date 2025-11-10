@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register - BloodConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar card">
+      <div class="logo">
+        <div class="mark">BC</div>
+        <div style="line-height:1"><strong>BloodConnect</strong>
+          <div class="small">Connect. Donate. Save.</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="search.html">Search</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <section class="card fadeUp" style="margin-top:22px;max-width:760px">
+      <h1>Register as a Donor</h1>
+      <p class="small">Thank you for choosing to register — your willingness can save lives.</p>
+      <form id="donorForm" class="card" style="margin-top:18px;max-width:500px">
+        <label>Name: <input type="text" name="name" id="name" required></label>
+        <label>Age: <input type="number" name="age" id="age" required></label>
+        <label>Gender:
+          <select name="gender" id="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>Blood Group:
+          <select name="bloodGroup" id="bloodGroup" required>
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+        </label>
+        <label>City: <input type="text" name="city" id="city" required></label>
+        <label>Contact: <input type="text" name="contact" id="contact" required></label>
+        <label>Notes: <textarea name="notes" id="notes"></textarea></label>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <div id="msg"></div>
+    </section>
+
+    <div class="footer small">© 2025 BloodConnect — Thank you for donating.</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

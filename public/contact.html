@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact - BloodConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar card">
+      <div class="logo"><div class="mark">BC</div>
+        <div style="line-height:1"><strong>BloodConnect</strong><div class="small">Connect. Donate. Save.</div></div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="register.html">Register</a>
+        <a href="search.html">Search</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
+
+    <section class="card fadeUp" style="margin-top:22px;max-width:720px">
+      <h1>Contact</h1>
+      <p class="small">For partnerships, NGO outreach, or technical help, reach out to our support team.</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks — message sent (demo)')">
+        <label>Your name: <input required></label>
+        <label>Your email: <input type="email" required></label>
+        <label>Message: <textarea required></textarea></label>
+        <div style="margin-top:8px"><button class="btn btn-primary">Send Message</button></div>
+      </form>
+    </section>
+
+    <div class="footer small">© 2025 BloodConnect — Reach out anytime.</div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
