@@ -32,16 +32,17 @@ a {
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   padding: 14px 20px;
   border-radius: 12px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent) !important;
   backdrop-filter: blur(6px);
-}
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+} */
 
 .logo {
   display: flex;
@@ -61,7 +62,7 @@ a {
   box-shadow: 0 6px 18px rgba(229, 57, 53, 0.18)
 }
 
-.nav-links {
+/* .nav-links {
   display: flex;
   gap: 12px;
   align-items: center
@@ -94,7 +95,7 @@ a {
 .nav-links a.active::after {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   opacity: 0.95
-}
+} */
 
 /* Hero */
 .hero {
@@ -149,7 +150,7 @@ select option {
   border-radius: 12px;
   border: 0;
   background: transparent;
-  color: #e6eef8;
+  color: #000000;
   font-weight: 700;
   cursor: pointer;
   transition: all .22s ease
@@ -161,7 +162,7 @@ select option {
 }
 
 .btn-secondary {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(90deg, rgba(230, 56, 56, 0.1), rgba(255, 255, 255, 0.05));
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -245,7 +246,7 @@ textarea {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: transparent;
-  color: #e6eef8
+  color: #000000
 }
 
 input:focus,
@@ -280,7 +281,7 @@ textarea:focus {
 
 .donor-name {
   font-weight: 700;
-  color: #fff;
+  color: #000000;
   margin-bottom: 4px;
 }
 
@@ -363,3 +364,130 @@ textarea:focus {
     font-size: 26px
   }
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    margin: 10px 0;
+  }
+}
+
+/* Bootstrap navbar overrides for dark theme and responsiveness */
+.navbar {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent) !important;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  padding: 14px 20px;
+}
+
+.navbar-brand {
+  color: #000000 !important;
+  font-weight: 800;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.28s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  transform: translateY(-3px);
+  color: #cf1616 !important;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  bottom: 6px;
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile collapse styles */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+}
+
