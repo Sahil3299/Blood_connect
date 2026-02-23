@@ -5,6 +5,18 @@
 
 const STORAGE_KEY = 'bloodconnect_donors_v2';
 
+// ======= AUTH MANAGEMENT =======
+function getToken() { return localStorage.getItem('token'); }
+function getUser() { 
+  const u = localStorage.getItem('user');
+  return u ? JSON.parse(u) : null;
+}
+function getAuthHeaders() {
+  const token = getToken();
+  return token ? { 'Authorization': `Bearer ${token}` } : {};
+}
+function isAuthenticated() { return !!getToken(); }
+
 // Utility Functions
 function uid() { return 'd_' + Math.random().toString(36).slice(2, 9); }
 
@@ -18,6 +30,73 @@ function writeStorage(arr) { localStorage.setItem(STORAGE_KEY, JSON.stringify(ar
 function escapeHtml(s) { 
   if (!s) return ''; 
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '<', '>': '>', '"': '"', '\'': '&#39;' }[c])); 
+}
+
+/* ==========================================================================
+   Auth UI Management
+   ========================================================================== */
+function updateAuthUI() {
+  const authLinksEl = document.getElementById('authLinks');
+  if (!authLinksEl) return;
+
+  const p = (window.location.pathname || '').toLowerCase();
+  const isRegister = p.endsWith('/register.html') || p === '/register';
+  const isSearch = p.endsWith('/search.html') || p === '/search';
+  const isLogin = p.endsWith('/login.html') || p === '/login';
+  const isSignup = p.endsWith('/signup.html') || p === '/signup';
+
+  if (isAuthenticated()) {
+    const user = getUser();
+    const userName = user ? user.name : 'User';
+    authLinksEl.innerHTML = `
+      <a href="register.html" class="nav-link ${isRegister ? 'active' : ''}">Register Donor</a>
+      <a href="search.html" class="nav-link ${isSearch ? 'active' : ''}">Search Donors</a>
+      <span style="display: inline-block; margin: 0 0.5rem; color: var(--gray-600);">|</span>
+      <span style="display: inline-block; margin: 0 0.5rem; color: var(--gray-700);">${escapeHtml(userName)}</span>
+      <button onclick="handleLogout()" class="nav-link" style="background: none; border: none; cursor: pointer; padding: 0;">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </button>
+    `;
+  } else {
+    authLinksEl.innerHTML = `
+      <a href="login.html" class="nav-link ${isLogin ? 'active' : ''}">Login</a>
+      <a href="signup.html" class="nav-link ${isSignup ? 'active' : ''}">Signup</a>
+    `;
+  }
+}
+
+function updateHeroActions() {
+  const heroActionsEl = document.getElementById('heroActions');
+  if (!heroActionsEl) return;
+
+  if (isAuthenticated()) {
+    heroActionsEl.innerHTML = `
+      <a href="register.html" class="btn btn-primary btn-lg">
+        <i class="bi bi-heart-fill"></i> Register as Donor
+      </a>
+      <a href="search.html" class="btn btn-secondary btn-lg">
+        <i class="bi bi-search"></i> Search Donors
+      </a>
+    `;
+  } else {
+    heroActionsEl.innerHTML = `
+      <a href="signup.html" class="btn btn-primary btn-lg">
+        <i class="bi bi-person-plus-fill"></i> Create Account
+      </a>
+      <a href="login.html" class="btn btn-secondary btn-lg">
+        <i class="bi bi-box-arrow-in-right"></i> Login
+      </a>
+    `;
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  updateAuthUI();
+  updateHeroActions();
+  showSuccess('Logged Out', 'You have been logged out successfully.');
+  setTimeout(() => { window.location.href = '/'; }, 1000);
 }
 
 /* ==========================================================================
@@ -63,6 +142,14 @@ function showSuccess(title, message) { showToast(title, message, 'success'); }
 function showError(title, message) { showToast(title, message, 'error'); }
 function showWarning(title, message) { showToast(title, message, 'warning'); }
 function showInfo(title, message) { showToast(title, message, 'info'); }
+
+/* ==========================================================================
+   Authentication Helper
+   ========================================================================== */
+
+// (De-duped) Use the shared implementations defined at top of file:
+// - getAuthHeaders()
+// - isAuthenticated()
 
 /* ==========================================================================
    Loading Spinner
@@ -137,9 +224,12 @@ if (donorForm) {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const res = await fetch('/api/register', {
+      const res = await fetch('/api/donor/register', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          ...getAuthHeaders()
+        },
         body: JSON.stringify(data)
       });
       const result = await res.json();
@@ -226,7 +316,9 @@ async function renderSearchResults() {
     if (bloodGroup) params.append('bloodGroup', bloodGroup);
     if (city) params.append('city', city);
 
-    const res = await fetch(`/api/search?${params.toString()}`);
+    const res = await fetch(`/api/donor/search?${params.toString()}`, {
+      headers: getAuthHeaders()
+    });
     const donors = await res.json();
 
     if (countEl) countEl.textContent = donors.length;
@@ -345,6 +437,10 @@ function animateCounter(el) {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+  // Update auth UI
+  updateAuthUI();
+  updateHeroActions();
+  
   // Observe fade-up elements
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
   
@@ -379,7 +475,41 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth > 768) header.classList.remove('nav-open');
     });
   }
+
+  // Check auth for protected pages
+  checkAuthAndRedirect();
 });
+
+// Protect pages - redirect unauthenticated users
+async function checkAuthAndRedirect() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    const p = window.location.pathname.toLowerCase();
+    if (p.endsWith('/register.html') || p.endsWith('/search.html') || p === '/register' || p === '/search') {
+      window.location.href = '/login.html';
+    }
+    return;
+  }
+  
+  try {
+    const res = await fetch('/api/me', {
+      headers: getAuthHeaders()
+    });
+    if (!res.ok) {
+      const p = window.location.pathname.toLowerCase();
+      if (p.endsWith('/register.html') || p.endsWith('/search.html') || p === '/register' || p === '/search') {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/login.html';
+      }
+    }
+  } catch (e) {
+    const p = window.location.pathname.toLowerCase();
+    if (p.endsWith('/register.html') || p.endsWith('/search.html') || p === '/register' || p === '/search') {
+      window.location.href = '/login.html';
+    }
+  }
+}
 
 /* ==========================================================================
    Sample Data Seeding
