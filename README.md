@@ -284,7 +284,7 @@ cp .env.example .env
 Edit `.env`:
 
 ```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/bloodconnect
+MONGODB_URI=mongo url
 JWT_SECRET=your_random_jwt_secret_key_here_change_in_production
 PORT=5000
 NODE_ENV=development
