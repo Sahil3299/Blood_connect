@@ -2,13 +2,13 @@
 
 > A web application connecting blood donors and seekers with **JWT-based authentication** and secure donor management.
 
-<<<<<<< HEAD
 ## Live Link: 
 https://blood-connect-jwdg.vercel.app/ 
 
 ## Overview
+
 BloodConnect is a full-stack blood donation management system that connects blood donors with those in need. The platform allows donors to register, search for available donors, and connect through a centralized database.
-=======
+
 ## 🚀 Features
 
 ✅ **User Authentication**
@@ -16,7 +16,6 @@ BloodConnect is a full-stack blood donation management system that connects bloo
 - User registration & login with email validation
 - Password hashing with bcrypt
 - 7-day token expiration
->>>>>>> 77ec9c9 (add authentication)
 
 ✅ **Protected Routes**
 - Only authenticated users can register as donors or search for donors
