@@ -1,243 +1,98 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Register - BloodConnect</title>
+  <title>Register Donor - BloodConnect</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts - Inter -->
+  <link rel="stylesheet" href="design.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <div class="logo-mark">
-            <i class="bi bi-droplet-fill"></i>
-          </div>
-          <div class="logo-text">
-            BloodConnect
-            <span>Connect. Donate. Save.</span>
-          </div>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6h18M3 12h18M3 18h18"></path>
-          </svg>
-        </button>
-        
-        <nav class="nav" id="mainNav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <span id="authLinks"></span>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- Page Header -->
-  <div class="page-header">
-    <div class="container">
-      <h1 class="page-title">Register as a Donor</h1>
-      <p class="page-subtitle">Thank you for choosing to save lives. Fill in your details below.</p>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="form-page">
-    <div class="card">
-      <div class="card-body">
-        <form id="donorForm">
-          <!-- Name Field -->
-          <div class="form-group">
-            <label class="form-label" for="name">
-              Full Name <span class="required">*</span>
-            </label>
-            <div class="input-group">
-              <input 
-                type="text" 
-                class="form-control" 
-                id="name" 
-                name="name" 
-                placeholder="Enter your full name"
-                required
-                autocomplete="name"
-              >
-              <i class="bi bi-person input-icon"></i>
-            </div>
-            <div class="form-feedback invalid-feedback">Please enter your full name</div>
-          </div>
-
-          <!-- Age and Gender Row -->
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="age">
-                Age <span class="required">*</span>
-              </label>
-              <div class="input-group">
-                <input 
-                  type="number" 
-                  class="form-control" 
-                  id="age" 
-                  name="age" 
-                  placeholder="Enter your age"
-                  min="18"
-                  max="65"
-                  required
-                >
-                <i class="bi bi-calendar input-icon"></i>
-              </div>
-              <div class="form-feedback invalid-feedback">Please enter a valid age (18-65)</div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="gender">
-                Gender <span class="required">*</span>
-              </label>
-              <div class="input-group">
-                <select 
-                  class="form-control form-select" 
-                  id="gender" 
-                  name="gender" 
-                  required
-                >
-                  <option value="">Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
-                <i class="bi bi-person-badge input-icon"></i>
-              </div>
-              <div class="form-feedback invalid-feedback">Please select your gender</div>
-            </div>
-          </div>
-
-          <!-- Blood Group -->
-          <div class="form-group">
-            <label class="form-label" for="bloodGroup">
-              Blood Group <span class="required">*</span>
-            </label>
-            <div class="input-group">
-              <select 
-                class="form-control form-select" 
-                id="bloodGroup" 
-                name="bloodGroup" 
-                required
-              >
-                <option value="">Select Blood Group</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-              </select>
-              <i class="bi bi-droplet input-icon"></i>
-            </div>
-            <div class="form-feedback invalid-feedback">Please select your blood group</div>
-          </div>
-
-          <!-- City -->
-          <div class="form-group">
-            <label class="form-label" for="city">
-              City <span class="required">*</span>
-            </label>
-            <div class="input-group">
-              <input 
-                type="text" 
-                class="form-control" 
-                id="city" 
-                name="city" 
-                placeholder="Enter your city"
-                required
-                autocomplete="address-level2"
-              >
-              <i class="bi bi-geo-alt input-icon"></i>
-            </div>
-            <div class="form-feedback invalid-feedback">Please enter your city</div>
-          </div>
-
-          <!-- Contact -->
-          <div class="form-group">
-            <label class="form-label" for="contact">
-              Contact Number <span class="required">*</span>
-            </label>
-            <div class="input-group">
-              <input 
-                type="tel" 
-                class="form-control" 
-                id="contact" 
-                name="contact" 
-                placeholder="Enter your phone number"
-                required
-                autocomplete="tel"
-              >
-              <i class="bi bi-telephone input-icon"></i>
-            </div>
-            <div class="form-feedback invalid-feedback">Please enter a valid contact number</div>
-          </div>
-
-          <!-- Notes -->
-          <div class="form-group">
-            <label class="form-label" for="notes">
-              Additional Notes
-            </label>
-            <textarea 
-              class="form-control" 
-              id="notes" 
-              name="notes" 
-              placeholder="Any additional information you'd like to share (optional)"
-              rows="4"
-            ></textarea>
-          </div>
-
-          <!-- Form Actions -->
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="submitBtn">
-              <span class="btn-text">
-                <i class="bi bi-heart-fill"></i> Register as Donor
-              </span>
-              <span class="btn-spinner" style="display: none;"></span>
-            </button>
-            <button type="reset" class="btn btn-secondary">
-              <i class="bi bi-arrow-counterclockwise"></i> Reset
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <div class="logo-mark">
-            <i class="bi bi-droplet-fill"></i>
-          </div>
-          BloodConnect
+  <div class="shell">
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo"><span class="logo-mark"><i class="bi bi-droplet-fill"></i></span><span class="logo-text">BloodConnect<span>Connect. Donate. Save.</span></span></a>
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+          <nav class="nav" id="mainNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <span id="authLinks"></span>
+          </nav>
         </div>
-        <p class="footer-text">© 2026 BloodConnect — Thank you for donating.</p>
       </div>
-    </div>
-  </footer>
+    </header>
 
-  <!-- Toast Container -->
+    <main class="main">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <div class="fade-up">
+            <span class="eyebrow"><i class="bi bi-heart-pulse"></i> Donor onboarding</span>
+            <h1 class="page-title">Register as a donor.</h1>
+            <p class="page-subtitle">Your details help families and coordinators find compatible donors faster during emergencies.</p>
+          </div>
+          <div class="page-actions fade-up"><a href="search.html" class="btn btn-secondary"><i class="bi bi-search"></i> Search Donors</a></div>
+        </div>
+      </section>
+
+      <section class="form-page">
+        <div class="card auth-card fade-up">
+          <div class="card-body">
+            <form id="donorForm">
+              <div class="form-group">
+                <label class="form-label" for="name">Full Name <span class="required">*</span></label>
+                <div class="input-group"><input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required autocomplete="name"><i class="bi bi-person input-icon"></i></div>
+                <div class="form-feedback invalid-feedback">Please enter your full name</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="age">Age <span class="required">*</span></label>
+                  <div class="input-group"><input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" min="18" max="65" required><i class="bi bi-calendar input-icon"></i></div>
+                  <div class="form-feedback invalid-feedback">Please enter a valid age between 18 and 65</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="gender">Gender <span class="required">*</span></label>
+                  <div class="input-group"><select class="form-control form-select" id="gender" name="gender" required><option value="">Select Gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select><i class="bi bi-person-badge input-icon"></i></div>
+                  <div class="form-feedback invalid-feedback">Please select your gender</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="bloodGroup">Blood Group <span class="required">*</span></label>
+                <div class="input-group"><select class="form-control form-select" id="bloodGroup" name="bloodGroup" required><option value="">Select Blood Group</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="O+">O+</option><option value="O-">O-</option><option value="AB+">AB+</option><option value="AB-">AB-</option></select><i class="bi bi-droplet input-icon"></i></div>
+                <div class="form-feedback invalid-feedback">Please select your blood group</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="city">City <span class="required">*</span></label>
+                <div class="input-group"><input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" required autocomplete="address-level2"><i class="bi bi-geo-alt input-icon"></i></div>
+                <div class="form-feedback invalid-feedback">Please enter your city</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact">Contact Number <span class="required">*</span></label>
+                <div class="input-group"><input type="tel" class="form-control" id="contact" name="contact" placeholder="Enter your phone number" required autocomplete="tel"><i class="bi bi-telephone input-icon"></i></div>
+                <div class="form-feedback invalid-feedback">Please enter a valid contact number</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="notes">Additional Notes</label>
+                <div class="input-group"><textarea class="form-control" id="notes" name="notes" placeholder="Availability, last donation, or preferred contact time" rows="4"></textarea></div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submitBtn"><span class="btn-text"><i class="bi bi-heart-fill"></i> Register as Donor</span><span class="btn-spinner" style="display: none;"></span></button>
+                <button type="reset" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
+  </div>
   <div class="toast-container" id="toastContainer"></div>
-
   <script src="script.js"></script>
 </body>
-
 </html>

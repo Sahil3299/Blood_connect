@@ -1,152 +1,114 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - BloodConnect</title>
+  <title>About - BloodConnect</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts - Inter -->
+  <link rel="stylesheet" href="design.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <div class="logo-mark">
-            <i class="bi bi-droplet-fill"></i>
-          </div>
-          <div class="logo-text">
-            BloodConnect
-            <span>Connect. Donate. Save.</span>
-          </div>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6h18M3 12h18M3 18h18"></path>
-          </svg>
-        </button>
-        
-        <nav class="nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link active">About</a>
-          <a href="register.html" class="nav-link">Register</a>
-          <a href="search.html" class="nav-link">Search</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
+  <div class="shell">
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo"><span class="logo-mark"><i class="bi bi-droplet-fill"></i></span><span class="logo-text">BloodConnect<span>Connect. Donate. Save.</span></span></a>
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+          <nav class="nav" id="mainNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <span id="authLinks"></span>
+          </nav>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main Content -->
-  <main style="padding-bottom: 3rem;">
-    <!-- Hero Section -->
-    <div class="container" style="padding-top: 3rem;">
-      <div class="about-hero">
-        <h1>About BloodConnect</h1>
-        <p>Bridging the Gap Between Donors and Recipients</p>
-      </div>
-    </div>
-
-    <!-- Mission Section -->
-    <div class="container">
-      <section class="mission-card">
-        <h2>Our Mission</h2>
-        <p>
-          To create a seamless and efficient platform that connects blood donors with those in need, 
-          ensuring timely access to life-saving blood donations across communities. We believe that 
-          every drop counts and that technology can help bridge the gap between those who want to 
-          help and those who need help.
-        </p>
+    <main class="main">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <div class="fade-up">
+            <span class="eyebrow"><i class="bi bi-heart-pulse"></i> Our mission</span>
+            <h1 class="page-title">Making emergency blood access feel calm, fast, and trustworthy.</h1>
+            <p class="page-subtitle">BloodConnect bridges donors and recipients through a focused healthcare platform built for clarity during urgent moments.</p>
+          </div>
+          <div class="page-actions fade-up">
+            <a href="register.html" class="btn btn-primary"><i class="bi bi-heart-fill"></i> Register Donor</a>
+            <a href="search.html" class="btn btn-secondary"><i class="bi bi-search"></i> Search Donors</a>
+          </div>
+        </div>
       </section>
-    </div>
 
-    <!-- Stats Section -->
-    <div class="container" style="margin-bottom: 3rem;">
-      <div class="stats-grid" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 1rem; padding: 2rem;">
-        <div class="stat-item">
-          <div class="stat-value">1,000+</div>
-          <div class="stat-label">Donors Registered</div>
+      <section class="section">
+        <div class="container">
+          <div class="grid grid-2">
+            <article class="card fade-up">
+              <div class="card-body">
+                <span class="feature-icon"><i class="bi bi-bullseye"></i></span>
+                <h2 class="card-title mt-2">Our Mission</h2>
+                <p>To create a seamless platform that connects blood donors with people in need, improving timely access to life-saving blood donations across communities.</p>
+              </div>
+            </article>
+            <article class="card fade-up">
+              <div class="card-body">
+                <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
+                <h2 class="card-title mt-2">Our Standard</h2>
+                <p>We prioritize readable donor information, accessible flows, strong visual hierarchy, and clear calls to action so volunteers can move quickly.</p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value">500+</div>
-          <div class="stat-label">Lives Saved</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">50+</div>
-          <div class="stat-label">Cities Covered</div>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Features Cards -->
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">What We Do</h2>
-        <p class="section-subtitle">Our platform makes blood donation simple, fast, and accessible.</p>
-      </div>
-      
-      <div class="features-grid" style="margin-bottom: 3rem;">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-heart-pulse"></i>
+      <section class="section section-alt">
+        <div class="container">
+          <div class="stats-band fade-up">
+            <div class="stats-grid">
+              <div class="stat-item"><div class="stat-value">1,000+</div><div class="stat-label">Donors registered</div></div>
+              <div class="stat-item"><div class="stat-value">500+</div><div class="stat-label">Lives supported</div></div>
+              <div class="stat-item"><div class="stat-value">50+</div><div class="stat-label">Cities covered</div></div>
+              <div class="stat-item"><div class="stat-value">24/7</div><div class="stat-label">Emergency mindset</div></div>
+            </div>
           </div>
-          <h3 class="feature-title">Simple Donation Process</h3>
-          <p class="feature-description">Our streamlined process makes blood donation quick, safe, and comfortable. Professional staff ensure the highest standards of care.</p>
         </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-lightning-charge"></i>
-          </div>
-          <h3 class="feature-title">24/7 Emergency Response</h3>
-          <p class="feature-description">Quick response system for emergency blood requirements. We connect donors to patients within minutes when time is critical.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="bi bi-people"></i>
-          </div>
-          <h3 class="feature-title">Community Support</h3>
-          <p class="feature-description">Building a strong network of regular donors who are ready to help save lives and inspire others to join our cause.</p>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Team Section -->
-    <div class="container">
-      <div class="card" style="padding: 2rem;">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Our Team</h2>
-        <div class="team-grid">
-          <div class="team-card">
-            <img src="assets/team1.jpg" alt="Dr. Harsh Shinde">
-            <h3>Dr. Harsh Shinde</h3>
-            <p>Medical Director</p>
+      <section class="section">
+        <div class="container">
+          <div class="section-header fade-up">
+            <span class="eyebrow"><i class="bi bi-layers"></i> What we do</span>
+            <h2 class="section-title">A better operating layer for donor coordination.</h2>
           </div>
-          <div class="team-card">
-            <img src="assets/team2.jpeg" alt="Darshan Sonawala">
-            <h3>Darshan Sonawala</h3>
-            <p>Operations Manager</p>
-          </div>
-          <div class="team-card">
-            <img src="assets/team3.png" alt="Mamata Nair">
-            <h3>Mamata Nair</h3>
-            <p>Donor Relations</p>
+          <div class="grid grid-3">
+            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-ui-checks"></i></span><h3 class="feature-title">Simple Donation Flow</h3><p class="feature-description">Forms are structured, readable, and mobile-friendly so donor onboarding stays focused.</p></article>
+            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-lightning-charge"></i></span><h3 class="feature-title">Emergency Response</h3><p class="feature-description">Search and request surfaces are built for quick decisions when time is critical.</p></article>
+            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-people"></i></span><h3 class="feature-title">Community Support</h3><p class="feature-description">A stronger donor network helps families, NGOs, and hospital coordinators act together.</p></article>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="footer small">© 2026 BloodConnect — Thank you for donating.</div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header fade-up">
+            <span class="eyebrow"><i class="bi bi-person-hearts"></i> Team</span>
+            <h2 class="section-title">Built by people who care about access.</h2>
+          </div>
+          <div class="team-grid">
+            <article class="team-card fade-up"><img src="assets/team1.jpg" alt="Dr. Harsh Shinde"><h3>Dr. Harsh Shinde</h3><p>Medical Director</p></article>
+            <article class="team-card fade-up"><img src="assets/team2.jpeg" alt="Darshan Sonawala"><h3>Darshan Sonawala</h3><p>Operations Manager</p></article>
+            <article class="team-card fade-up"><img src="assets/team3.png" alt="Mamata Nair"><h3>Mamata Nair</h3><p>Donor Relations</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="toast-container" id="toastContainer"></div>
   <script src="script.js"></script>
 </body>
-
 </html>
