@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - BloodConnect</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="design.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,34 +28,90 @@
     </header>
 
     <main class="main">
-      <section class="page-hero">
-        <div class="container page-hero-inner">
-          <div class="fade-up">
+      <section class="hero hero-bg-section about-hero">
+        <div class="hero-bg" aria-hidden="true">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&fit=crop&auto=format 800w,
+                      https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80&fit=crop&auto=format 1200w,
+                      https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80&fit=crop&auto=format 1600w"
+              sizes="100vw">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80&fit=crop&auto=format"
+              srcset="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&fit=crop&auto=format 800w,
+                      https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80&fit=crop&auto=format 1200w,
+                      https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80&fit=crop&auto=format 1600w"
+              sizes="100vw"
+              alt=""
+              width="1600"
+              height="900"
+              fetchpriority="high">
+          </picture>
+        </div>
+        <div class="container">
+          <div class="hero-content fade-up">
             <span class="eyebrow"><i class="bi bi-heart-pulse"></i> Our mission</span>
-            <h1 class="page-title">Making emergency blood access feel calm, fast, and trustworthy.</h1>
-            <p class="page-subtitle">BloodConnect bridges donors and recipients through a focused healthcare platform built for clarity during urgent moments.</p>
-          </div>
-          <div class="page-actions fade-up">
-            <a href="register.html" class="btn btn-primary"><i class="bi bi-heart-fill"></i> Register Donor</a>
-            <a href="search.html" class="btn btn-secondary"><i class="bi bi-search"></i> Search Donors</a>
+            <h1 class="hero-title">Making emergency blood access feel calm, fast, and trustworthy.</h1>
+            <p class="hero-description">BloodConnect bridges donors and recipients through a focused healthcare platform built for clarity during urgent moments.</p>
+            <div class="hero-actions">
+              <a href="register.html" class="btn btn-primary"><i class="bi bi-heart-fill"></i> Register Donor</a>
+              <a href="search.html" class="btn btn-secondary btn-light"><i class="bi bi-search"></i> Search Donors</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
-          <div class="grid grid-2">
-            <article class="card fade-up">
-              <div class="card-body">
+          <div class="about-cards">
+            <article class="about-image-card fade-up">
+              <div class="about-image-card-img">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=500&q=80&fit=crop&auto=format 500w,
+                            https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=750&q=80&fit=crop&auto=format 750w"
+                    sizes="(max-width: 720px) 100vw, 50vw">
+                  <img
+                    src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=750&q=80&fit=crop&auto=format"
+                    srcset="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=500&q=80&fit=crop&auto=format 500w,
+                            https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=750&q=80&fit=crop&auto=format 750w"
+                    sizes="(max-width: 720px) 100vw, 50vw"
+                    alt="Donor giving blood at a Red Cross drive — the core act our platform supports"
+                    width="750"
+                    height="500"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="about-image-card-body">
                 <span class="feature-icon"><i class="bi bi-bullseye"></i></span>
-                <h2 class="card-title mt-2">Our Mission</h2>
+                <h2 class="card-title">Our Mission</h2>
                 <p>To create a seamless platform that connects blood donors with people in need, improving timely access to life-saving blood donations across communities.</p>
               </div>
             </article>
-            <article class="card fade-up">
-              <div class="card-body">
+            <article class="about-image-card fade-up">
+              <div class="about-image-card-img">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80&fit=crop&auto=format 500w,
+                            https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format 750w"
+                    sizes="(max-width: 720px) 100vw, 50vw">
+                  <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format"
+                    srcset="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80&fit=crop&auto=format 500w,
+                            https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format 750w"
+                    sizes="(max-width: 720px) 100vw, 50vw"
+                    alt="Volunteer checking hemoglobin before donation — the careful process we make faster"
+                    width="750"
+                    height="500"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="about-image-card-body">
                 <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
-                <h2 class="card-title mt-2">Our Standard</h2>
+                <h2 class="card-title">Our Standard</h2>
                 <p>We prioritize readable donor information, accessible flows, strong visual hierarchy, and clear calls to action so volunteers can move quickly.</p>
               </div>
             </article>
@@ -66,12 +121,32 @@
 
       <section class="section section-alt">
         <div class="container">
-          <div class="stats-band fade-up">
-            <div class="stats-grid">
-              <div class="stat-item"><div class="stat-value">1,000+</div><div class="stat-label">Donors registered</div></div>
-              <div class="stat-item"><div class="stat-value">500+</div><div class="stat-label">Lives supported</div></div>
-              <div class="stat-item"><div class="stat-value">50+</div><div class="stat-label">Cities covered</div></div>
-              <div class="stat-item"><div class="stat-value">24/7</div><div class="stat-label">Emergency mindset</div></div>
+          <div class="impact-row fade-up">
+            <div class="stats-band">
+              <div class="stats-grid">
+                <div class="stat-item"><div class="stat-value">1,000+</div><div class="stat-label">Donors registered</div></div>
+                <div class="stat-item"><div class="stat-value">500+</div><div class="stat-label">Lives supported</div></div>
+                <div class="stat-item"><div class="stat-value">50+</div><div class="stat-label">Cities covered</div></div>
+                <div class="stat-item"><div class="stat-value">24/7</div><div class="stat-label">Emergency mindset</div></div>
+              </div>
+            </div>
+            <div class="impact-photo">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=500&q=80&fit=crop&auto=format 500w,
+                          https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=750&q=80&fit=crop&auto=format 750w"
+                  sizes="(max-width: 860px) 100vw, 380px">
+                <img
+                  src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=750&q=80&fit=crop&auto=format"
+                  srcset="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=500&q=80&fit=crop&auto=format 500w,
+                          https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=750&q=80&fit=crop&auto=format 750w"
+                  sizes="(max-width: 860px) 100vw, 380px"
+                  alt="Donor holding a thank-you card after a successful blood donation at a community camp"
+                  width="380"
+                  height="260"
+                  loading="lazy">
+              </picture>
             </div>
           </div>
         </div>
@@ -83,10 +158,82 @@
             <span class="eyebrow"><i class="bi bi-layers"></i> What we do</span>
             <h2 class="section-title">A better operating layer for donor coordination.</h2>
           </div>
-          <div class="grid grid-3">
-            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-ui-checks"></i></span><h3 class="feature-title">Simple Donation Flow</h3><p class="feature-description">Forms are structured, readable, and mobile-friendly so donor onboarding stays focused.</p></article>
-            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-lightning-charge"></i></span><h3 class="feature-title">Emergency Response</h3><p class="feature-description">Search and request surfaces are built for quick decisions when time is critical.</p></article>
-            <article class="feature-card fade-up"><span class="feature-icon"><i class="bi bi-people"></i></span><h3 class="feature-title">Community Support</h3><p class="feature-description">A stronger donor network helps families, NGOs, and hospital coordinators act together.</p></article>
+          <div class="about-features">
+            <article class="about-feature-card fade-up">
+              <div class="about-feature-img">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw">
+                  <img
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80&fit=crop&auto=format"
+                    srcset="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw"
+                    alt="Medical professional reviewing donor registration data on a tablet"
+                    width="600"
+                    height="400"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="about-feature-body">
+                <span class="feature-icon"><i class="bi bi-ui-checks"></i></span>
+                <h3 class="feature-title">Simple Donation Flow</h3>
+                <p class="feature-description">Forms are structured, readable, and mobile-friendly so donor onboarding stays focused.</p>
+              </div>
+            </article>
+            <article class="about-feature-card fade-up">
+              <div class="about-feature-img">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw">
+                  <img
+                    src="https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=600&q=80&fit=crop&auto=format"
+                    srcset="https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1587745416684-47953f16f02f?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw"
+                    alt="Volunteer coordinating an emergency blood request over the phone"
+                    width="600"
+                    height="400"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="about-feature-body">
+                <span class="feature-icon"><i class="bi bi-lightning-charge"></i></span>
+                <h3 class="feature-title">Emergency Response</h3>
+                <p class="feature-description">Search and request surfaces are built for quick decisions when time is critical.</p>
+              </div>
+            </article>
+            <article class="about-feature-card fade-up">
+              <div class="about-feature-img">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw">
+                  <img
+                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&fit=crop&auto=format"
+                    srcset="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80&fit=crop&auto=format 400w,
+                            https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80&fit=crop&auto=format 600w"
+                    sizes="(max-width: 720px) 100vw, 33vw"
+                    alt="Group of volunteers standing together at a community blood donation camp"
+                    width="600"
+                    height="400"
+                    loading="lazy">
+                </picture>
+              </div>
+              <div class="about-feature-body">
+                <span class="feature-icon"><i class="bi bi-people"></i></span>
+                <h3 class="feature-title">Community Support</h3>
+                <p class="feature-description">A stronger donor network helps families, NGOs, and hospital coordinators act together.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -96,11 +243,24 @@
           <div class="section-header fade-up">
             <span class="eyebrow"><i class="bi bi-person-hearts"></i> Team</span>
             <h2 class="section-title">Built by people who care about access.</h2>
+            <p class="section-subtitle">Real people working behind the scenes to make blood access faster and more reliable.</p>
           </div>
           <div class="team-grid">
-            <article class="team-card fade-up"><img src="assets/team1.jpg" alt="Dr. Harsh Shinde"><h3>Dr. Harsh Shinde</h3><p>Medical Director</p></article>
-            <article class="team-card fade-up"><img src="assets/team2.jpeg" alt="Darshan Sonawala"><h3>Darshan Sonawala</h3><p>Operations Manager</p></article>
-            <article class="team-card fade-up"><img src="assets/team3.png" alt="Mamata Nair"><h3>Mamata Nair</h3><p>Donor Relations</p></article>
+            <article class="team-card fade-up">
+              <img src="assets/team1.jpg" alt="Dr. Harsh Shinde, Medical Director at BloodConnect" width="118" height="118" loading="lazy">
+              <h3>Dr. Harsh Shinde</h3>
+              <p>Medical Director</p>
+            </article>
+            <article class="team-card fade-up">
+              <img src="assets/team2.jpeg" alt="Darshan Sonawala, Operations Manager at BloodConnect" width="118" height="118" loading="lazy">
+              <h3>Darshan Sonawala</h3>
+              <p>Operations Manager</p>
+            </article>
+            <article class="team-card fade-up">
+              <img src="assets/team3.png" alt="Mamata Nair, Donor Relations at BloodConnect" width="118" height="118" loading="lazy">
+              <h3>Mamata Nair</h3>
+              <p>Donor Relations</p>
+            </article>
           </div>
         </div>
       </section>

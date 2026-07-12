@@ -36,31 +36,38 @@
     </header>
 
     <main class="main">
-      <section class="hero">
+      <section class="hero hero-bg-section">
+        <div class="hero-bg" aria-hidden="true">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&q=80&fit=crop&auto=format 800w,
+                      https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1200&q=80&fit=crop&auto=format 1200w,
+                      https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1600&q=80&fit=crop&auto=format 1600w"
+              sizes="100vw">
+            <img
+              src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1200&q=80&fit=crop&auto=format"
+              srcset="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&q=80&fit=crop&auto=format 800w,
+                      https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1200&q=80&fit=crop&auto=format 1200w,
+                      https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1600&q=80&fit=crop&auto=format 1600w"
+              sizes="100vw"
+              alt=""
+              width="1600"
+              height="900"
+              fetchpriority="high">
+          </picture>
+        </div>
         <div class="container">
-          <div class="hero-inner">
-            <div class="hero-content fade-up">
-              <span class="eyebrow"><i class="bi bi-shield-check"></i> Trusted emergency donor network</span>
-              <h1 class="hero-title">Find the right blood donor with clinical-grade speed.</h1>
-              <p class="hero-description">BloodConnect helps patients, families, and volunteers locate compatible donors quickly with a clean, secure, and responsive healthcare experience.</p>
-              <div class="hero-actions" id="heroActions"></div>
-              <div class="hero-stats">
-                <div class="stat-card"><strong data-count="1200">0</strong><span>Lives supported</span></div>
-                <div class="stat-card"><strong data-count="860">0</strong><span>Active donors</span></div>
-                <div class="stat-card"><strong data-count="50">0</strong><span>Cities covered</span></div>
-                <div class="stat-card"><strong>24/7</strong><span>Emergency access</span></div>
-              </div>
-            </div>
-            <div class="hero-visual fade-up">
-              <div class="floating-pill"><i class="bi bi-check-circle-fill"></i> Verified donor match</div>
-              <div class="floating-drop"><i class="bi bi-droplet-fill"></i></div>
-              <div class="visual-card">
-                <img src="assets/bannar.png" alt="Healthcare donor coordination">
-                <div class="visual-caption">
-                  <strong>Premium healthcare coordination</strong>
-                  <span>Clear donor data, fast calls, and fewer delays during urgent requests.</span>
-                </div>
-              </div>
+          <div class="hero-content fade-up">
+            <span class="eyebrow"><i class="bi bi-shield-check"></i> Trusted emergency donor network</span>
+            <h1 class="hero-title">Find the right blood donor with clinical-grade speed.</h1>
+            <p class="hero-description">BloodConnect helps patients, families, and volunteers locate compatible donors quickly with a clean, secure, and responsive healthcare experience.</p>
+            <div class="hero-actions" id="heroActions"></div>
+            <div class="hero-stats">
+              <div class="stat-card"><strong data-count="1200">0</strong><span>Lives supported</span></div>
+              <div class="stat-card"><strong data-count="860">0</strong><span>Active donors</span></div>
+              <div class="stat-card"><strong data-count="50">0</strong><span>Cities covered</span></div>
+              <div class="stat-card"><strong>24/7</strong><span>Emergency access</span></div>
             </div>
           </div>
         </div>
@@ -95,13 +102,81 @@
 
       <section class="section section-alt">
         <div class="container">
-          <div class="stats-band fade-up">
-            <div class="stats-grid">
-              <div class="stat-item"><div class="stat-value" data-count="1200">0</div><div class="stat-label">Lives supported</div></div>
-              <div class="stat-item"><div class="stat-value" data-count="860">0</div><div class="stat-label">Registered donors</div></div>
-              <div class="stat-item"><div class="stat-value" data-count="50">0</div><div class="stat-label">Cities covered</div></div>
-              <div class="stat-item"><div class="stat-value" data-count="98">0</div><div class="stat-label">Response clarity score</div></div>
+          <div class="impact-row fade-up">
+            <div class="stats-band">
+              <div class="stats-grid">
+                <div class="stat-item"><div class="stat-value" data-count="1200">0</div><div class="stat-label">Lives supported</div></div>
+                <div class="stat-item"><div class="stat-value" data-count="860">0</div><div class="stat-label">Registered donors</div></div>
+                <div class="stat-item"><div class="stat-value" data-count="50">0</div><div class="stat-label">Cities covered</div></div>
+                <div class="stat-item"><div class="stat-value" data-count="98">0</div><div class="stat-label">Response clarity score</div></div>
+              </div>
             </div>
+            <div class="impact-photo">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80&fit=crop&auto=format 500w,
+                          https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format 750w"
+                  sizes="(max-width: 860px) 100vw, 380px">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format"
+                  srcset="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80&fit=crop&auto=format 500w,
+                          https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=750&q=80&fit=crop&auto=format 750w"
+                  sizes="(max-width: 860px) 100vw, 380px"
+                  alt="Healthcare volunteer checking a donor's hemoglobin level before blood collection at a community camp"
+                  width="380"
+                  height="260"
+                  loading="lazy">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header fade-up">
+            <span class="eyebrow"><i class="bi bi-person-hearts"></i> Our team</span>
+            <h2 class="section-title">Built by people who care about access.</h2>
+            <p class="section-subtitle">Real people behind BloodConnect — medical professionals, operations specialists, and donor relations experts working together.</p>
+          </div>
+          <div class="home-team-grid">
+            <article class="home-team-card fade-up">
+              <img
+                src="assets/team1.jpg"
+                alt="Dr. Harsh Shinde, Medical Director at BloodConnect"
+                width="80"
+                height="80"
+                loading="lazy">
+              <div>
+                <h3>Dr. Harsh Shinde</h3>
+                <p>Medical Director</p>
+              </div>
+            </article>
+            <article class="home-team-card fade-up">
+              <img
+                src="assets/team2.jpeg"
+                alt="Darshan Sonawala, Operations Manager at BloodConnect"
+                width="80"
+                height="80"
+                loading="lazy">
+              <div>
+                <h3>Darshan Sonawala</h3>
+                <p>Operations Manager</p>
+              </div>
+            </article>
+            <article class="home-team-card fade-up">
+              <img
+                src="assets/team3.png"
+                alt="Mamata Nair, Donor Relations at BloodConnect"
+                width="80"
+                height="80"
+                loading="lazy">
+              <div>
+                <h3>Mamata Nair</h3>
+                <p>Donor Relations</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
